@@ -2,3 +2,4 @@
 \contentsline {section}{Technicalities}{iii}{section*.4}% 
 \contentsline {chapter}{\numberline {1}$G$-Groups and $G$-Sets}{2}{chapter.1}% 
 \contentsline {chapter}{\numberline {2}Decomposition to Irreducible Subspaces}{7}{chapter.2}% 
+\contentsline {chapter}{\numberline {3}Preliminary Algebraic Structures}{10}{chapter.3}% 

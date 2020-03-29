@@ -558,7 +558,7 @@ I.e. the action is
 \[a\prs{g, \tilde{g}} = g \tilde{g} \text{.}\]
 \end{definition}
 
-\begin{definition}[The Regular $G$-Representation]
+\begin{definition}[The Regular $G$-Representation]\label{definition:regular_representation}
 \stress{The regular $G$-representation} is the corresponding $k\brs{G}$ of the regular $G$-set.
 \end{definition}
 
@@ -636,6 +636,8 @@ which is then the required $2$-dimensional representation.
 
 %29/3/2020
 
+\chapter{Preliminary Algebraic Structures}
+
 \begin{definition}[$k$-Algebra]
 A \stress{$k$-algebra} $A \in \Ring$ which is also a $k$-vector space, such that the multiplication map $A \times A \to A$ is $k$-bilinear.
 \end{definition}
@@ -660,11 +662,11 @@ such that
 \end{definition}
 
 \begin{notation}
-Denote by $R-\Mod$ the category of left $R$-modules.
+Denote by $R\Mod$ the category of left $R$-modules.
 \end{notation}
 
 \begin{definition}[Morphism of Modules]
-Let $R \in \Ring$ and $f \colon M \to N$ a map of sets such that $M,N \in R-\Mod$.
+Let $R \in \Ring$ and $f \colon M \to N$ a map of sets such that $M,N \in R\Mod$.
 
 $f$ is \stress{a morphism of $R$-modules} if it's additive such that
 \[\forall r \in R \forall m \in M \colon \phi\prs{rm} = r \phi\prs{m} \text{.}\]
@@ -676,7 +678,7 @@ Denote the category of $k$-algebras, with morphisms between them being morphisms
 
 \begin{remark}
 Let $A \in \Alg_k$.
-Any $M \in A-\Mod$ has a structure of a $k$-vector-space by
+Any $M \in A\Mod$ has a structure of a $k$-vector-space by
 \[k \rmono Z\prs{A} \subseteq A \acts M \text{.}\]
 Morphisms of $A$-modules will be $k$-linear. 
 
@@ -684,7 +686,182 @@ Often do we start with a $k$-vector space $M$ and give it the structure of an $A
 We then assume implicitly that the $k$-vector-space structure on $M$ arising from this module structure is the same as the original one.
 \end{remark}
 
+\begin{definition}[Group Algebra]
+The \stress{group algebra of $G$ over $k$}, denoted $k\brs{G}$, is, as a $k$-vector space $k\brs{G}$ per definition \ref{definition:regular_representation}.
+The ring structure of $k\brs{G}$ is characterised as the unique $k-bilinear$
+\[k\brs{G} \times k\brs{G} \to k\brs{G}\]
+sending
+\[\prs{\delta_g, \delta_h} \mapsto \delta_{gH} \text{.}\]
+\end{definition}
 
+\begin{notation}
+Let $A \in \Ring$, we denote by $A^\times$
+the multiplicative group of invertible elements in $A$.
+\end{notation}
+
+\begin{exercise}\label{exercise:multiplicative_group_adjoint}
+Let $A \in \Alg_k$, we have a natural isomorphism
+\[\alpha \colon \hom_{\Alg_k}\prs{k\brs{G}, A} \riso \hom_{\Grp}\prs{G, A^\times} \text{.}\]
+\end{exercise}
+
+\begin{remark}
+In categorical language, $\prs{-}^\times$ is a right-adjoint functor to $k\brs{-}$.
+
+This isomorphism is given by \[T \mapsto \prs{g \mapsto T\prs{\delta_g}} \text{.}\]
+\end{remark}
+
+\begin{remark}[Naturality]
+By \href{https://ncatlab.org/nlab/show/natural+transformation}{naturality} of $\alpha$ we mean naturality in $\Alg_k$ and in $\Grp$ in the sense that if $f \colon A_1 \to A_2$ in $\Alg_k$ the diagram
+\[
+\begin{tikzcd}
+\hom\prs{k\brs{G}, A_1} \arrow[d] \arrow[r, "\alpha_{G, A_1}"] & \hom\prs{G, A_1^\times} \arrow[d] \\
+\hom\prs{k\brs{G}, A_2} \arrow[r, "\alpha_{G, A_2}"] & \hom\prs{G, A_2^\times}
+\end{tikzcd}
+\]
+\end{remark}
+
+\begin{corollary}
+Let $V \in \Vect_k$. We have a natural bijection between structures of a $G$-representation on $V$ and of a $k\brs{G}$-modules on $V$.
+\end{corollary}
+
+\begin{proof}
+Consider $A \ceq \endo\prs{V}$.
+By \ref{exercise:multiplicative_group_adjoint} we get
+\begin{align*}
+\hom\prs{k\brs{G}, \endo\prs{V}} \cong \hom\prs{G, \endo\prs{V}^\times} \cong \Hom\prs{G, \GL\prs{V}}
+\end{align*}
+where elements in the rightmost term define are $G$-representation on $V$.
+\end{proof}
+
+\begin{exercise}
+Let $V,W$ be $G$-representations and so also $k\brs{G}$-modules.
+Then $T \colon V \to W$ is a $G$-morphism iff it's a $k\brs{G}$-morphism.
+\end{exercise}
+
+\begin{example}
+We have
+\[k\brs{S_3} \cong k_1 \oplus k_{\sgn} \oplus W \oplus W \text{.}\]
+
+The components $k_1, k_{\sgn}$ are called \stress{the isotopic components} and we have \[W \oplus \cong M_{2 \times 2}\prs{k} \text{.}\]
+\end{example}
+
+\begin{definition}[Division Ring]
+A \stress{division ring} $R$ is a ring such that every element of $R \setminus \set{0}$ is invertible.
+\end{definition}
+
+\begin{definition}[Division Algebra]
+A $k$-algebra is a \stress{division $k$-algebra} if it's a division ring a s a ring.
+\end{definition}
+
+\begin{example}[Hamilton's Quaternion Algebra]
+\item Fields are division rings.
+
+\item The Hamilton \href{https://en.wikipedia.org/wiki/Quaternion}{quaternion} algebra is a $4$-dimensional algebra over $\RR$ with is a division algebra. 
+\end{example}
+
+\begin{lemma}[Schur] \label{lemma:schur3}
+Remind our assumptions $G$ is finite and $\mrm{char}\prs{k} \nmid \abs{G}$.
+
+Then $\endo_G\prs{E}$ is a division $k$-algebra under composition.
+\end{lemma}
+
+\begin{proof}
+This is a reformulation of \ref{lemma:schur}.
+\end{proof}
+
+\begin{claim}
+Assume $k = \bar{k}$ and let $A$ be a finite-dimensional division $k$-algebra. Then $A = k$.
+\end{claim}
+
+\begin{remark}
+\ref{lemma:schur2} follows easily from the above claim.
+\end{remark}
+
+\begin{proof}
+\begin{lemma}
+Let $\FF \in \catname{Field}$.
+Let $A$ be a finite-dimensional division $\FF$-algebra and let $B \leq A$ a subalgebra. Then $B$ is also a division algebra.
+\end{lemma}
+\begin{proof}
+Let $b \in B \setminus \set{0}$. Consider the $\FF$-linear map
+\begin{align*}
+m_b \colon A &\to A \\
+a &\mapsto ba \hphantom{lalalala} \text{.}
+\end{align*}
+Then $m_b$ preserves $B$ and is invertible with $m_b^{-1} = m_{b^{-1}}$.
+Then
+$\rest{m_b}{B} \colon B \to B$ is invertible.
+Hence there's $x \in B$ such that \[bx = m_b\prs{x} = 1 \in B \text{.}\]
+
+Hence $b$ is right-invertible in $B$.
+Similarly $b$ is left-invertible in $B$, and hence $b$ is invertible in $B$.
+\end{proof}
+
+Let $a \in A$ and consider the subalgebra of $A$ generated by $a$,
+\[B \ceq \spn \set{a^n}{n \in \NN} \text{.}\]
+By the lemma, $B$ is a division $k$-algebra.
+On the other hand, $B$ is commutative. So $B$ is a finite extension field over $k$ and since $k = \bar{k}$ we get $a \in k$.
+
+Hence $A = k$.
+\end{proof}
+
+\begin{remark}[Basis of a Module]
+Any $D$-module $V$ admits a \stress{basis} $\set{v_i}_{i \in I} \subseteq V$ such that
+\[V = \bigoplus_{i \in I} D \cdot v_i \text{.}\]
+\end{remark}
+
+\begin{definition}[Finitely Generated Module]
+An $R$-module is \stress{finitely generated} if it has a finite generating set.
+\end{definition}
+
+\begin{definition}
+The \stress{dimension} of a $D$-module $V$ is the cardinality of a basis of $V$.
+\end{definition}
+
+\begin{proposition}
+Let $D \in \Alg_k$ and $V \in D\Mod$. Then
+\[\dim_k V = \dim_D V \cdot \dim_k D \text{.}\]
+\end{proposition}
+
+\begin{definition}
+Let $R \in \Ring$, we define $R^\op$ to be the same abelian group with the product
+\[x \cdot_{R^\op} y = yx \text{.}\]
+\end{definition}
+
+\begin{definition}[Right $R$-Module]
+A right $R$-module is a left $R^\op$-module.
+\end{definition}
+
+Let $R \in \Ring$, $M \in R\Mod$ and $S \ceq \endo_R\prs{M}$.
+
+Then $S$ has the structure of a ring and $M$ of an $S$-module.
+
+Given an element in $R$ we get an endomorphism in $\endo\prs{M}$ via the action of $R$. This endomorphism commutes with the endomorphisms of $S$ by definition of $S$.
+We get a ring homomorphism
+\[R \to \endo_S\prs{M} \text{.}\]
+
+\begin{notation}
+Let $E$ be an irreducible $G$-representation, we denote
+\[D_E \ceq \endo_G\prs{E} \text{.}\]
+\end{notation}
+
+\begin{remark}
+By \ref{lemma:schur3} $D_E$ is a finite-dimensional division $k$-algebra.
+\end{remark}
+
+\begin{remark}
+We get a map
+\[\Ff_E \colon k\brs{G} \to \endo_{D_E} \prs{E} \text{.}\]
+\end{remark}
+
+\begin{proposition}[Special Case of Artin-Wederburn]
+Let $\prs{E_i}_{i \in [r]}$ be a section of the classes of irreducible representations of $G$.
+
+We obtain a morphism
+\[\prod_{i \in [r]} \FF_{E_i} = \Ff \colon k\brs{G} \to \prod_{i \in [r]} \endo_{D_{E_i}}\prs{E_i} \text{.}\]
+
+This is an isomorphism.
+\end{proposition}
 
 \begin{comment}
 \begin{thebibliography}{2}

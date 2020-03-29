@@ -77,10 +77,39 @@
 \contentsline {corollary}{{Corollary}{2.0.{15}}{}}{9}{theoremx.2.0.15}% 
 \contentsline {proof}{{Proof}{9}{}}{9}{proof.9}% 
 \contentsline {example}{{Example}{10}{}}{9}{example.10}% 
-\contentsline {definitionx}{{Definition}{2.0.{16}}{$k$-Algebra}}{9}{theoremx.2.0.16}% 
-\contentsline {remark}{{Remark}{2.0.{17}}{}}{9}{theoremx.2.0.17}% 
-\contentsline {definitionx}{{Definition}{2.0.{18}}{Module}}{9}{theoremx.2.0.18}% 
-\contentsline {notation}{{Notation}{2.0.{19}}{}}{10}{theoremx.2.0.19}% 
-\contentsline {definitionx}{{Definition}{2.0.{20}}{Morphism of Modules}}{10}{theoremx.2.0.20}% 
-\contentsline {notation}{{Notation}{2.0.{21}}{}}{10}{theoremx.2.0.21}% 
-\contentsline {remark}{{Remark}{2.0.{22}}{}}{10}{theoremx.2.0.22}% 
+\contentsline {definitionx}{{Definition}{3.0.{1}}{$k$-Algebra}}{10}{theoremx.3.0.1}% 
+\contentsline {remark}{{Remark}{3.0.{2}}{}}{10}{theoremx.3.0.2}% 
+\contentsline {definitionx}{{Definition}{3.0.{3}}{Module}}{10}{theoremx.3.0.3}% 
+\contentsline {notation}{{Notation}{3.0.{4}}{}}{10}{theoremx.3.0.4}% 
+\contentsline {definitionx}{{Definition}{3.0.{5}}{Morphism of Modules}}{10}{theoremx.3.0.5}% 
+\contentsline {notation}{{Notation}{3.0.{6}}{}}{10}{theoremx.3.0.6}% 
+\contentsline {remark}{{Remark}{3.0.{7}}{}}{10}{theoremx.3.0.7}% 
+\contentsline {definitionx}{{Definition}{3.0.{8}}{Group Algebra}}{10}{theoremx.3.0.8}% 
+\contentsline {notation}{{Notation}{3.0.{9}}{}}{11}{theoremx.3.0.9}% 
+\contentsline {exercise}{{Exercise}{6}{}}{11}{exercise.6}% 
+\contentsline {remark}{{Remark}{3.0.{10}}{}}{11}{theoremx.3.0.10}% 
+\contentsline {remark}{{Remark}{3.0.{11}}{Naturality}}{11}{theoremx.3.0.11}% 
+\contentsline {corollary}{{Corollary}{3.0.{12}}{}}{11}{theoremx.3.0.12}% 
+\contentsline {proof}{{Proof}{10}{}}{11}{proof.10}% 
+\contentsline {exercise}{{Exercise}{7}{}}{11}{exercise.7}% 
+\contentsline {example}{{Example}{11}{}}{11}{example.11}% 
+\contentsline {definitionx}{{Definition}{3.0.{13}}{Division Ring}}{11}{theoremx.3.0.13}% 
+\contentsline {definitionx}{{Definition}{3.0.{14}}{Division Algebra}}{11}{theoremx.3.0.14}% 
+\contentsline {example}{{Example}{12}{Hamilton's Quaternion Algebra}}{11}{example.12}% 
+\contentsline {lemma}{{Lemma}{3.0.{15}}{Schur}}{11}{theoremx.3.0.15}% 
+\contentsline {proof}{{Proof}{11}{}}{11}{proof.11}% 
+\contentsline {claim}{{Claim}{3.0.{16}}{}}{11}{theoremx.3.0.16}% 
+\contentsline {remark}{{Remark}{3.0.{17}}{}}{11}{theoremx.3.0.17}% 
+\contentsline {proof}{{Proof}{12}{}}{11}{proof.12}% 
+\contentsline {lemma}{{Lemma}{3.0.{18}}{}}{11}{theoremx.3.0.18}% 
+\contentsline {proof}{{Proof}{13}{}}{12}{proof.13}% 
+\contentsline {remark}{{Remark}{3.0.{19}}{Basis of a Module}}{12}{theoremx.3.0.19}% 
+\contentsline {definitionx}{{Definition}{3.0.{20}}{Finitely Generated Module}}{12}{theoremx.3.0.20}% 
+\contentsline {definitionx}{{Definition}{3.0.{21}}{}}{12}{theoremx.3.0.21}% 
+\contentsline {proposition}{{Proposition}{3.0.{22}}{}}{12}{theoremx.3.0.22}% 
+\contentsline {definitionx}{{Definition}{3.0.{23}}{}}{12}{theoremx.3.0.23}% 
+\contentsline {definitionx}{{Definition}{3.0.{24}}{Right $R$-Module}}{12}{theoremx.3.0.24}% 
+\contentsline {notation}{{Notation}{3.0.{25}}{}}{12}{theoremx.3.0.25}% 
+\contentsline {remark}{{Remark}{3.0.{26}}{}}{12}{theoremx.3.0.26}% 
+\contentsline {remark}{{Remark}{3.0.{27}}{}}{12}{theoremx.3.0.27}% 
+\contentsline {proposition}{{Proposition}{3.0.{28}}{Special Case of Artin-Wederburn}}{12}{theoremx.3.0.28}% 
