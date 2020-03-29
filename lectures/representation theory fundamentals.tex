@@ -637,8 +637,54 @@ which is then the required $2$-dimensional representation.
 %29/3/2020
 
 \begin{definition}[$k$-Algebra]
-A \stress{$k$-algebra} is a ring $A$ which is also a $k$-vector space, such that the multiplication map $A \times A \to A$ is $k$-bilinear.
+A \stress{$k$-algebra} $A \in \Ring$ which is also a $k$-vector space, such that the multiplication map $A \times A \to A$ is $k$-bilinear.
 \end{definition}
+
+\begin{remark}
+Given a $k$-algebra $A$ we have a ring homomorphism $k \to Z\prs{A}$ given by $c \mapsto c \cdot 1$. It is injective, so we can think of $k$ as sitting inside $A$.
+
+One can therefore think of a $k$-algebra as a ring $A$ equipped with a ring homomorphism $k \to Z\prs{A}$.
+\end{remark}
+
+\begin{definition}[Module]
+Let $R \in \Ring$. A \stress{(left) $R$-module} is $M \in \Ab$ equipped with a biadditive map
+\begin{align*}
+R \times M &\to M \\
+\prs{r,m} &\mapsto rm
+\end{align*}
+such that
+\begin{align*}
+\forall m \in M \colon & 1 \cdot m = m \\
+\forall r_1, r_2 \in R \forall m \in M \colon & \prs{r_1 r_2} \cdot m = r_1 \prs{r_2 m} \text{.}
+\end{align*}
+\end{definition}
+
+\begin{notation}
+Denote by $R-\Mod$ the category of left $R$-modules.
+\end{notation}
+
+\begin{definition}[Morphism of Modules]
+Let $R \in \Ring$ and $f \colon M \to N$ a map of sets such that $M,N \in R-\Mod$.
+
+$f$ is \stress{a morphism of $R$-modules} if it's additive such that
+\[\forall r \in R \forall m \in M \colon \phi\prs{rm} = r \phi\prs{m} \text{.}\]
+\end{definition}
+
+\begin{notation}
+Denote the category of $k$-algebras, with morphisms between them being morphisms of the respective modules, by $\Alg_k$.
+\end{notation}
+
+\begin{remark}
+Let $A \in \Alg_k$.
+Any $M \in A-\Mod$ has a structure of a $k$-vector-space by
+\[k \rmono Z\prs{A} \subseteq A \acts M \text{.}\]
+Morphisms of $A$-modules will be $k$-linear. 
+
+Often do we start with a $k$-vector space $M$ and give it the structure of an $A$-module.
+We then assume implicitly that the $k$-vector-space structure on $M$ arising from this module structure is the same as the original one.
+\end{remark}
+
+
 
 \begin{comment}
 \begin{thebibliography}{2}
