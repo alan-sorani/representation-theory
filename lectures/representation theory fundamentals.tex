@@ -960,6 +960,117 @@ $xi_G\prs{0}$ is the number of conjugacy classes of $G$, which by the above is t
 Also \[\xi_G\prs{-2} = \abs{G} = \sum_{i \in [r]} \prs{\dim_k E_i}^2 \text{.}\]
 \end{corollary}
 
+\begin{lemma}
+Assume $G$ is commutative and $k = \bar{k}$. Let $E$ be an irreducible $G$-representation. Then $\dim_k E = 1$.
+\end{lemma}
+
+\begin{proof}
+Check first that every $g \in G$ acts by scalar on $E$. Let $\lambda$ be an eigenvalue of $g$, we get that $E_{g,\lambda}$ is a subrepresentation so $E_{g,\lambda} = E$.
+\end{proof}
+
+\begin{notation}
+Denote by \[\mrm{Ch}_k\prs{G} \ceq \hom_{\Grp}\prs{G, k^\times}\]
+the set of characters of $G$ to $k$.
+\end{notation}
+
+\begin{corollary}
+The family
+\[\prs{k_\chi}_{\chi \in \mrm{Ch}_k\prs{g}}\]
+contains a section of the classes of irreducible $G$-representations.
+\end{corollary}
+
+\begin{remark}
+Let \[\mu_3 = \set{1, e^{\frac{2 \pi i}{3}}, e^{\frac{4 \pi i}{3}}} \text{.}\]
+Then $\mu_3 \acts \CC$ as an $\RR$-vector space and this is an irreducible representation on $\mu_3$.
+\end{remark}
+
+\begin{fact}
+If $V \in \Vect_k$ is one-dimensional, $\endo_k\prs{V} \cong k$.
+\end{fact}
+
+\begin{definition}[Fourier Transform]
+Let \stress{the Fourier Transform of $G$}
+\[\Ff \colon k\brs{G} \riso \prod_{\chi \in \mrm{Ch}_k\prs{G}} k \riso \Fun_k\prs{\mrm{Ch}_k\prs{G}}\]
+by
+\[\Ff\prs{\sum_{g \in G} c_g \cdot \delta_g} = \prs{\chi \mapsto \sum_{g \in G} c_g \cdot \chi\prs{g}} \text{.}\]
+\end{definition}
+
+Let $\chi \in \mrm{Ch}_k\prs{G}$, we want to find $x \in k\brs{G}$ such that $\sigma_{\chi}\in \Fun_k\prs{\mrm{Ch}_k\prs{G}}$ such that $\Ff\prs{x} = \delta_\chi$.
+
+We want $\sum_{g \in G} c_g \cdot \delta_g$ such that for $\theta \in \mrm{Ch}_k\prs{G}$ we have
+\[\sum_{g \in G} c_g \theta\prs{g} = \fcases{1 & \theta = \chi \\ 0 & \theta \neq \chi} \text{.}\]
+
+
+Take
+\[e_\chi \ceq \frac{1}{\abs{G}} \sum_{g \in G} \chi\prs{g}^{-1} \cdot \delta_g \in k\brs{G} \text{.}\]
+Then
+\[\Ff\prs{e_\chi} = \delta_\chi \text{.}\]
+
+For this we want to check the ``orthogonality relations''
+\[\frac{1}{\abs{G}} \sum_{g \in G} \chi\prs{g}^{-1} \theta\prs{g} = \delta_\chi \text{.}\]
+The LHS is
+\[\frac{1}{\abs{G}} \sum_{g \in G} \prs{\chi^{-1}\theta}\prs{g}\]
+so this reduces to
+\[\frac{1}{\abs{G}} \sum_{g \in G} \chi\prs{g} = \delta_\chi \text{.}\]
+This is clear when $\chi = 1$, and otherwise requires to prove $\sum_{g \in G} \chi\prs{g} = 0$.
+Pick $g_0 \in G$ such that $\chi\prs{g_0} \neq 1$, we get
+\[\sum_{g \in G} \chi\prs{g} = \sum_{g \in G} \chi\prs{g g_0} = \prs{\sum_{g \in G} \chi\prs{g}} \chi\prs{g_0} \text{.}\]
+Hence
+\[\prs{1 - \chi\prs{g_0}} \sum_{g \in G} \chi\prs{0} = 0\]
+so
+\[\sum_{g \in G} \chi\prs{g} = 0 \text{.}\]
+
+For $g \in G$, $\delta_g$ acts on $\chi$ by
+\[\Ff\prs{\delta_g} = \prs{\chi \mapsto \chi\prs{g}} = \sum_{\chi \in \mrm{Ch}_k\prs{G}} \chi\prs{g} \delta_\chi \text{.}\]
+Applying $\Ff^{-1}$ we get
+\[\delta_g = \sum_{\chi \in \mrm{Ch}_k\prs{G}} \chi\prs{g} \cdot e_\chi \text{.}\]
+
+\begin{remark}
+We have two bases for $k\brs{G}$, the \stress{geometric basis} $\prs{\delta_g}_{g \in G}$ and the \stress{spectral basis} $\prs{e_\chi}_{\chi \in \mrm{Ch}_k\prs{G}}$.
+
+We have
+\begin{align*}
+e_\chi = \sum_{g \in G} \frac{1}{\abs{G}} \chi\prs{g}^{-1} \cdot \delta_g
+\end{align*}
+where
+\[\delta_g = \sum_{\chi \in \mrm{Ch}_k\prs{G}} \chi\prs{g} \cdot e_\chi \text{.}\]
+\end{remark}
+
+\begin{definition}[Collapse Operators]
+Let $g_0 \in G$, we define
+\begin{align*}
+\mrm{Collapse}_{g_0} \colon k\brs{G} &\to k\brs{G} \\
+\delta_g &\mapsto \fcases{\delta_g & g = g_0 \\ 0 & g \neq g_0} \text{.}
+\end{align*}
+\end{definition}
+
+\begin{definition}[Shift Operators]
+Let $g_0 \in G$, we define
+\begin{align*}
+\mrm{Shift}_{g_0} \colon k\brs{G} \to k\brs{G} \\
+\delta_g &\mapsto \delta_{g g_0} \text{.}
+\end{align*}
+\end{definition}
+
+\begin{fact}
+The geometric bases of $k\brs{G}$ is the eigenbasis for the collapse operators, and the spectral basis is the eigenbasis for the shift operators.
+\end{fact}
+
+\begin{theorem}[Dirichlet]
+Let $d \in \NN_+, a \in \ZZ$ relatively prime, there are infinitely many primes congruent to $a$ mod $d$.
+\end{theorem}
+
+\begin{proof}
+Let $f \in \Fun_\CC\prs{\prs{\quot{\ZZ}{d\ZZ}}^\times}$ and extend this by $0$ to $\quot{\ZZ}{d\ZZ}$.
+Let
+\[M_f\prs{s} \ceq \sum_{p \text{ prime}} \frac{f\prs{p \mod d}}{p^s} \text{.}\]
+We want $f = \delta_{a \mod d}$.
+
+We have
+\[f\prs{g} = \frac{1}{\phi\prs{d}} \sum_{\chi \in \mrm{Ch}_\CC\prs{\prs{\quot{\ZZ}{d\ZZ}}^\times}} \chi\prs{a}^{-1} \chi\]
+where $\chi$ are ``multiplicative'' from which we obtain a sum easier to work with.
+\end{proof}
+
 \begin{comment}
 \begin{thebibliography}{2}
 \bibitem{context} 
