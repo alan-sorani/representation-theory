@@ -750,7 +750,7 @@ A \stress{division ring} $R$ is a ring such that every element of $R \setminus \
 \end{definition}
 
 \begin{definition}[Division Algebra]
-A $k$-algebra is a \stress{division $k$-algebra} if it's a division ring a s a ring.
+A $k$-algebra is a \stress{division $k$-algebra} if it's a division ring as a ring.
 \end{definition}
 
 \begin{example}[Hamilton's Quaternion Algebra]
@@ -862,6 +862,103 @@ We obtain a morphism
 
 This is an isomorphism.
 \end{proposition}
+
+%31/3/2020
+
+\begin{proof}
+\begin{description}
+\item[Injectivity:]
+Let $d \in k\brs{G}$ and assume $F\prs{d} = 0$.
+$d$ acts by zero on all $G$-representations by the definition of $\Ff$.
+
+Since every finite-dimensional $G$-representation is isomorphic to a direct sum of irreducible $G$-representations, $d$ acts by zero on any finite-dimensional $G$-representation.
+In particular $d$ acts by zero on the regular representation $k\brs{G}$. In particular $d = d \cdot 1 = 0$.
+
+\item[Surjectivity:]
+It's enough to see that the dimensions over $k$ match.
+
+On one hand we have $\dim_k k\brs{G} = \abs{G}$.
+
+Denote $e_i \ceq \dim_k E_i$ and $d_i \ceq \dim_k D_{E_i}$.
+Then
+\[e_i = \dim_k E_i = \dim_{D_{E_i}} E_i \cdot \underset{d_i}{\underbrace{\dim_k D_{E_i}}}\]
+so
+\[\dim_{D_{E_i}} E_i = \frac{e_i}{d_i} \text{.}\]
+
+For every $i \in [r]$ choose a basis of $E_i$ over $D_{E_i}$. We can identify $\endo_{D_{E_i}} \prs{E_i}$ with the $k$-algebra of matrices over $D_{E_i}^\op$ of order $\dim_{D_{E_i}} E_i$.
+Then
+\[\dim_k \endo_{D_{E_i}}\prs{E_i} = \dim_k D_{E_i}^\op \cdot \dim_{D_{E_i}^\op} M_{\frac{e_i}{d_i} \times \frac{e_i}{d_i}}\prs{D_{E_i}^\op} = d_i \cdot \prs{\frac{e_i}{d_i}}^2 = \frac{e_i^2}{d_i}\]
+so
+\[\dim\prs{\mathrm{codomain}\prs{\Ff}} = \sum_{i \in [r]} \frac{e_i^2}{d_i} \text{.}\]
+
+Then
+\[k\brs{G} \cong \bigoplus_{i \in [r]} E_i^{\brs{k\brs{G} : E_i}} \cong \bigoplus_{i \in [r]} E_i^{\oplus \frac{e_i}{d_i}}\]
+so
+\[\abs{G} = \dim_k k\brs{G} = \sum_{i \in [r]} \frac{e_i}{d_i} \cdot e_i = \sum_{i \in [r]} \frac{e_i^2}{d_i} \text{.}\]
+\end{description}
+\end{proof}
+
+\begin{definition}[Center]
+Let $G \in \Grp$, we call
+\[Z\prs{G} \ceq \set{g \in G}{\forall a \in G \colon ga = ag}\]
+\stress{the center of $G$}. 
+\end{definition}
+
+\begin{remark}
+There is an isomorphism
+\begin{align*}
+\Fun_k\prs{G} &\riso k\brs{G} \\
+f &\mapsto \sum_{g \in G} f\prs{g} \cdot \delta_g \text{.}
+\end{align*}
+\end{remark}
+
+\begin{definition}[Class Functions]
+Let
+\[\Fun_k\prs{G}^{\mrm{cl}} \ceq \set{f \in \Fun_k\prs{G}}{\forall g,h \in G \colon f\prs{ghg^{-1} = f\prs{h}}}\]
+be the space of \stress{class functions on $G$}.
+\end{definition}
+
+\begin{remark}
+Equivalently \[\Fun_k\prs{G}^{\mrm{cl}} = \set{f \in \Fun_k\prs{G}}{\forall g,h \in G \colon f\prs{gh} = f\prs{hg}} \text{.}\]
+\end{remark}
+
+\begin{exercise}
+\[Z\prs{k\brs{G}} \cong \Fun_k\prs{G}^{\mrm{cl}} \text{.}\]
+
+I.e. if $d = \sum_{g \in G} c_g \delta_g \in k\brs{G}$
+we get
+\[\d \in Z\prs{k\brs{G}} \iff \forall g,h \in G \colon c_{ghg^{-1}} = c_h \text{.}\]
+\end{exercise}
+
+\begin{remark}
+Class functions are functions which are constant on conjugacy classes.
+
+Then
+\[\dim Z\prs{k\brs{G}} = \dim \Fun_k\prs{G}^{\mrm{cl}}\]
+is the number of conjugacy classes in $G$.
+\end{remark}
+
+\begin{exercise}
+\[Z\prs{\endo_{D_{E_i}}\prs{E_i}} = Z\prs{M_{\frac{e_i}{d_i} \times \frac{e_i}{d_i}} \prs{D_{E_i}^\op}} = Z\prs{D_{E_i}^\op \cdot \id} = Z\prs{D_{E_i}^\op} = Z\prs{D_{E_i}} \text{.}\]
+Deduce
+\[\dim Z\prs{\prod_{i \in [r]} \endo_{D_{E_i}}\prs{E_i}} = \sum_{i \in [r]} \dim_k Z\prs{D_{E_i}} \text{.}\]
+\end{exercise}
+
+\begin{corollary}
+Assume $k = \bar{k}$. Then $D_{E_i} = k$ by \ref{lemma:schur2}. The number of conjugacy classes in $G$ is then
+\[\dim_k Z\prs{k\brs{G}} = \dim_k Z\prs{\prod_{i \in [r]} \endo_{D_{E_i}}\prs{E_i}} = \sum_{i \in [r]} 1 = r\]
+is the number of $G$-representation classes.
+\end{corollary}
+
+\begin{definition}
+For $s \in 2\ZZ$ let \[\delta_G\prs{s} \ceq \sum_{i \in [r]} \prs{\dim_k E_i}^{-s} \text{.}\]
+\end{definition}
+
+\begin{corollary}
+$xi_G\prs{0}$ is the number of conjugacy classes of $G$, which by the above is the number of irreducible $G$-representation classes.
+
+Also \[\xi_G\prs{-2} = \abs{G} = \sum_{i \in [r]} \prs{\dim_k E_i}^2 \text{.}\]
+\end{corollary}
 
 \begin{comment}
 \begin{thebibliography}{2}
